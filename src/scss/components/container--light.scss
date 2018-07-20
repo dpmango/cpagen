@@ -1,0 +1,48 @@
+.container--light{
+  background: $white;
+}
+
+.container--light:before{
+  display: none;
+}
+
+.container--light.container--iterable .container--content:before{
+  background: $semi-transparent-black;
+}
+
+.container--light.container--iterable .container__title:before{
+  border-color: $semi-transparent-black;
+}
+
+.container--light .container__title{
+  color: $title-dark-color;
+}
+
+.container--light .container--content{
+  color: $title-dark-color;
+}
+
+.container--light.container--offers .slick-dots li:not(.slick-active) button{
+  background: $title-dark-color;
+}
+
+.container--light .slick-next{
+  background: url(../img/svg/arrows/arrow-black-next.svg);
+}
+
+.container--light .slick-prev{
+  background: url(../img/svg/arrows/arrow-black-prev.svg);
+}
+
+.container--light .partners__item{
+  border-color: $border-normal-black-color;
+}
+
+.container--light .button{
+  color: $title-dark-color;
+  border-color: $title-dark-color;
+}
+
+.container--light .button:hover{
+  border-color: $black;
+}

@@ -1,0 +1,21 @@
+{
+  "name": "tennis",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Осипов Андрей"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "normalize.css": "*",
+    "jquery": "^3.2.1"
+  }
+}

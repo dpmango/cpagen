@@ -1,0 +1,169 @@
+.container--offers:before{
+  background-image: url(../img/jpg/backgrounds/bg2.jpg);
+  background-size: cover;
+}
+
+.offers{
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+}
+
+.offers__item{
+  list-style: none;
+  margin: 0 35px 30px 0;
+  padding: 0;
+  min-width: 200px;
+  max-width: 200px;
+  text-align: left;
+}
+
+.offers__item:last-child{
+  margin-right: 0;
+}
+
+.offers__title{
+  font-size: 22px;
+  font-family: $font-family-akrobat;
+  font-weight: bold;
+  color: $blue;
+  line-height: 26px;
+  padding: 24px 0 10px 0;
+}
+
+@media (min-width: 1200px) {
+
+  .offers{
+    background: url(../img/svg/offers/lines.svg) 76px 56px no-repeat;
+  }
+
+  .offers__item:nth-child(2n-1){
+    padding-top: 47px;
+  }
+
+}
+
+
+@media (max-width: 1199px) {
+
+  .offers__item{
+    min-width: 220px;
+    max-width: 220px;
+    text-align: center;
+    margin: 0 20px 30px 20px;
+  }
+
+  .offers__item:last-child{
+    margin-right: 20px;
+  }
+
+}
+
+@media ( max-width: 991px ) {
+
+  .offers__item{
+    min-width: 200px;
+    max-width: 200px;
+  }
+
+}
+
+@media ( max-width: 767px ) {
+
+  .container__title{
+    font-size: 44px;
+  }
+
+  .offers__item{
+    text-align: center;
+    max-width: 100%;
+    min-width: 100%;
+    margin: 0 0 30px 0;
+    padding: 0 10px 0 10px;
+  }
+
+  .offers__item img{
+    margin: 0 auto;
+  }
+
+  .offers .slick-arrow{
+    display: block;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    font-size: 0;
+    top: 53px;
+    right: 5%;
+    background: url(../img/svg/arrows/arrow-next.svg);
+    border: none;
+    opacity: 0.12;
+    cursor: pointer;
+    transition: $transition-slow;
+    z-index: 10;
+    outline: none;
+  }
+
+  .offers .slick-arrow:hover{
+    opacity: 1;
+  }
+
+  .offers .slick-prev{
+    right: auto;
+    left: 5%;
+    background: url(../img/svg/arrows/arrow-prev.svg);
+  }
+
+  .offers .slick-dots{
+    text-align: center;
+    padding: 0;
+    margin: 0;
+  }
+
+  .offers .slick-dots li{
+    list-style: none;
+    margin: 0 4px 0 4px;
+    padding: 0;
+    display: inline-block;
+    vertical-align: middle;
+    width: 12px;
+    height: 12px;
+  }
+
+
+
+  .offers .slick-dots li button{
+    font-size: 0;
+    width: 8px;
+    height: 8px;
+    padding: 0;
+    margin: 0;
+    border: none;
+    border-radius: 50%;
+    background: $semi-transparent-white;
+    transition: width 0.15s ease-in-out, height 0.15s ease-in-out;
+    outline: none;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .offers .slick-dots li button:hover{
+    background: $blue;
+    cursor: pointer;
+  }
+
+  .offers .slick-dots .slick-active button{
+    width: 12px;
+    height: 12px;
+    background: $blue;
+  }
+
+
+}
+
+@media ( max-width: 575px ) {
+
+  .offers{}
+
+
+
+}

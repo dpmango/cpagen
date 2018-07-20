@@ -1,0 +1,128 @@
+.container--section{
+  position: relative;
+  width: 100%;
+}
+
+.container--section:before{
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  background: url(../img/jpg/backgrounds/bg2.jpg) 50% 50% no-repeat;
+  background-size: cover;
+}
+
+
+.container--no-padding{
+  padding: 0 15px 0 15px;
+}
+
+
+.container--content{
+  padding: 40px 0 40px 0;
+  position: relative;
+  font-size: 16px;
+  line-height: 22px;
+  font-family: $font-family-roboto;
+  color: $text-white-color;
+}
+
+.container__title{
+  text-align: center;
+  font-size: 44px;
+  font-family: $font-family-akrobat;
+  line-height: 67px;
+  color: $title-color;
+  padding: 0 0 48px 0;
+}
+
+
+
+
+
+/* numbers for first page */
+
+.container--iterable .container--content:before{
+  content: "";
+  display: block;
+  width: 1px;
+  height: 40px;
+  background: $semi-transparent-white;
+  position: absolute;
+  left: calc( 50% - 1px );
+  top: 0;
+}
+
+.container--iterable .container__title:before{
+  content: "2";
+  display: block;
+  width: 31px;
+  height: 31px;
+  border: 1px solid $semi-transparent-white;
+  border-radius: 50%;
+  font-size: 16px;
+  line-height: 31px;
+  margin: 0 auto;
+}
+
+.container--iterable .container__title:after{
+  content: "";
+  display: block;
+  width: 160px;
+  height: 12px;
+  background: url(../img/svg/separator-title.svg);
+  margin: 23px auto 0 auto;
+}
+
+
+
+.container--iterable + .container--iterable .container__title:before{
+  content: "3";
+}
+
+.container--iterable + .container--iterable + .container--iterable .container__title:before{
+  content: "4";
+}
+
+.container--iterable + .container--iterable + .container--iterable + .container--iterable .container__title:before{
+  content: "5";
+}
+
+.container--iterable + .container--iterable + .container--iterable + .container--iterable + .container--iterable .container__title:before{
+  content: "6";
+}
+
+
+
+@media (max-width: 1200px) {
+
+
+
+}
+
+@media ( max-width: 992px ) {
+
+
+
+}
+
+@media ( max-width: 767px ) {
+
+  .container__title{
+    font-size: 44px;
+  }
+
+}
+
+@media ( max-width: 575px ) {
+
+  .container__title{
+    font-size: 32px;
+  }
+
+}
+

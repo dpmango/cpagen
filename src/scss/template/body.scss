@@ -1,0 +1,39 @@
+body{
+  font-family: $font-family-roboto;
+  font-weight: normal;
+  font-size: 15px;
+  background: $body-background;
+  color: $white;
+}
+
+/*  delete blue focus outline  */
+*:focus{
+  outline: none;
+}
+
+*{
+  transition: $transition-slow;
+}
+
+
+html{
+  height: 100%;
+}
+
+body{
+  height: 100%;
+}
+
+
+
+a{
+  color: $blue;
+  transition: $transition-fast;
+}
+
+a:hover{
+  text-decoration: none;
+  color: $white;
+}
+
+

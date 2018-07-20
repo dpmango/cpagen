@@ -1,0 +1,112 @@
+.footer{
+  background: $footer-background;
+  padding: 25px 0 35px 0;
+  font-size: 14px;
+}
+
+
+.footer__logo{
+  width: 150px;
+  height: 48px;
+}
+
+.footer__logo img{
+  width: 150px;
+  height: 48px;
+}
+
+
+.footer__description{
+  font-size: 14px;
+  line-height: 38px;
+  padding-top: 16px;
+  max-width: 270px;
+}
+
+
+.footer__link{
+  font-size: 12px;
+  line-height: 22px;
+  padding: 0;
+  margin: 0;
+}
+
+
+
+.footer__address, .footer__skype, .footer__email{
+  padding-left: 26px;
+  position: relative;
+}
+
+.footer__address:before, .footer__skype:before, .footer__email:before{
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 18px;
+  height: 18px;
+}
+
+.footer__address:before{
+  background: url(../img/svg/contacts/address.svg) 50% 50% no-repeat;
+}
+
+.footer__skype:before{
+  background: url(../img/svg/contacts/skype.svg) 50% 50% no-repeat;
+}
+
+.footer__email:before{
+  background: url(../img/svg/contacts/email.svg) 50% 50% no-repeat;
+}
+
+
+
+.footer__title{
+  font-size: 24px;
+  font-family: $font-family-akrobat;
+  padding-bottom: 21px;
+}
+
+.footer--bottom{
+  background: $footer-bottom-background;
+  color: $footer-bottom-color;
+  text-align: center;
+  padding: 20px 0 5px 0;
+}
+
+
+
+@media (max-width: 1200px) {
+
+
+
+}
+
+@media ( max-width: 992px ) {
+
+
+
+}
+
+@media ( max-width: 767px ) {
+
+
+
+}
+
+@media ( max-width: 575px ) {
+
+  .footer .row > div{
+    padding-bottom: 20px;
+  }
+
+  .footer__skype, .footer__email{
+    display: inline-block;
+  }
+
+  .footer__email{
+    margin-left: 25px;
+  }
+
+}

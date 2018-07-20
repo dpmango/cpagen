@@ -1,0 +1,55 @@
+﻿
+/* Sass vars */
+@import "vars";
+
+
+/* fonts */
+@import "fonts";
+
+
+
+/* styles of template blocks */
+
+@import "template/body";
+
+@import "template/header";
+
+@import "template/navs";
+
+@import "template/footer";
+
+
+
+/* styles of components */
+
+@import "components/inline-logo";
+
+@import "components/container";
+
+@import "components/container--first";
+
+@import "components/offers-list";
+
+@import "components/features-list";
+
+@import "components/partners-list";
+
+@import "components/feedback";
+
+@import "components/container-cta";
+
+@import "components/social";
+
+@import "components/arrow-top";
+
+@import "components/container--light";
+
+
+/* shared style files */
+
+@import "shared/forms";
+
+@import "shared/modal";
+
+@import "shared/buttons";
+

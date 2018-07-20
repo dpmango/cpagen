@@ -1,0 +1,167 @@
+
+.top-navbar{
+  flex-direction: row-reverse;
+  padding: 15px 0 15px 0;
+}
+
+.top-navbar__li{
+  margin: 0 20px 0 20px;
+  display: inline-block;
+  position: relative;
+}
+
+.top-navbar__a{
+  font-size: 15px;
+  color: $white;
+  position: relative;
+  padding-bottom: 4px;
+}
+
+.top-navbar__a:hover, .top-navbar__li.active .top-navbar__a{
+  color: $white;
+}
+
+.top-navbar__a:after{
+  width: 0;
+  content: "";
+  display: block;
+  position: absolute;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background: $blue;
+  transition: $transition-slow;
+}
+
+.top-navbar__a:hover:after, .top-navbar__li.active .top-navbar__a:after{
+  width: 100%;
+}
+
+.top-navbar__menu{
+  justify-content: center;
+  width: 100%;
+}
+
+
+.top-navbar-auth{
+  text-align: right;
+}
+
+.top-navbar-auth__li{
+  padding: 0 9px 0 9px;
+  display: inline-block;
+}
+
+.top-navbar-auth__li:last-child{
+  border-left: 2px solid $border-normal-white-color;
+  padding-right: 0;
+}
+
+.top-navbar-auth__a{
+  color: $nav-auth-white-color;
+  padding: 0;
+}
+
+.top-navbar-auth__a:hover{
+  color: $blue;
+}
+
+
+
+.top-navbar__mobile-menu-toogler{
+  display: none;
+}
+
+
+@media (max-width: 1200px) {
+
+  .top-navbar__li {
+    margin: 0 10px 0 10px;
+  }
+
+  .top-navbar-auth__li{
+    padding: 0 4px 0 4px;
+  }
+
+}
+
+@media ( max-width: 991px ) {
+
+  .top-navbar__menu {
+    display: none;
+  }
+
+  .top-navbar__li {
+    margin: 0 10px 0 10px;
+  }
+
+  .top-navbar-auth__a{
+    font-size: 15px;
+    text-transform: uppercase;
+  }
+
+  .top-navbar-auth__li{
+    padding: 0 10px 0 10px;
+  }
+
+}
+
+@media ( max-width: 767px ) {
+
+  .top-navbar__mobile{
+    display: block;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 0px;
+    top: 29px;
+
+  }
+
+  .top-navbar__mobile span{
+    display: block;
+    width: 30px;
+    height: 2px;
+    background: $red;
+  }
+
+  .top-navbar__mobile span:before{
+    content: "";
+    display: block;
+    height: 2px;
+    background: $red;
+    top: 8px;
+    position: relative;
+  }
+
+  .top-navbar__mobile span:after{
+    content: "";
+    display: block;
+    height: 2px;
+    background: $red;
+    bottom: -15px;
+    position: relative;
+  }
+
+}
+
+@media ( max-width: 575px ) {
+
+  .top-navbar__menu {
+    display: none;
+  }
+
+  .top-navbar-auth{
+    display: block;
+  }
+
+  .top-navbar-auth__li{
+    padding: 0 6px 0 6px;
+  }
+
+  .top-navbar-auth__a{
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+
+}

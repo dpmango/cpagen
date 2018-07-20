@@ -1,0 +1,93 @@
+.button{
+  display: inline-block;
+  width: 240px;
+  height: 60px;
+  padding: 18px 10px 18px 10px;
+  border: 1px solid $border-normal-white-color;
+  border-radius: 6px;
+  text-align: center;
+  color: $white;
+  font-size: 20px;
+  font-family: $font-family-akrobat;
+  box-sizing: border-box;
+  transition: $transition-fast;
+  position: relative;
+  background: none;
+  outline: none;
+  cursor: pointer;
+
+  overflow: hidden;
+}
+
+.button:hover{
+  border-color: $white;
+}
+
+
+.button-group .button{
+  margin-right: 8px;
+  margin-left: 8px;
+}
+
+
+.button--colored{
+  border: none;
+  z-index: 10;
+}
+
+/* colored button with transition for background-gradient */
+.button--colored:before, .button--colored:after{
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  border-radius: 6px;
+
+  background: linear-gradient(78.22deg, #5207FB 0.5%, #1DDAF3 107.68%);
+  transition: opacity 0.15s ease-in-out;
+  opacity: 1;
+}
+
+.button--colored:hover:before{
+  opacity: 0;
+}
+
+.button--colored:after{
+  opacity: 0;
+  background: linear-gradient(255.91deg, #5207FB 1.82%, #1DDAF3 114.92%);
+}
+
+.button--colored:hover:after{
+  opacity: 1;
+}
+
+
+
+
+@media ( min-width: 992px ) {
+
+
+}
+
+@media ( min-width: 768px ) {
+
+
+
+}
+
+@media ( max-width: 576px ) {
+
+
+
+}
+
+
+@media ( max-width: 991px ) {
+
+
+
+}
