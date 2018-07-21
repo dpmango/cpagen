@@ -214,7 +214,10 @@
     max-width: 430px;
   }
 
-
+  .slick-avatars{
+    padding: 17px 0 17px 0;
+    overflow: hidden;
+  }
 
 }
 
@@ -228,10 +231,7 @@
     max-width: 86%;
   }
 
-  .slick-avatars{
-    padding: 17px 0 17px 0;
-    overflow: hidden;
-  }
+
 
   .slick-avatars div{
     justify-content: flex-start;
