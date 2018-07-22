@@ -17,11 +17,15 @@
         return false;
     });
 
-    $(window).scroll(function(){
+    $(window).on('scroll', throttle(function(){
         checkArrowTop();
-    });
+        stickyHeader();
+        updateAnchors();
+    }, 50));
 
     checkArrowTop();
+    stickyHeader();
+    updateAnchors();
 
     $('.feedback').on('init', function (slick) {
         var Slick = slick.target;
@@ -89,7 +93,7 @@
 
     offersSlider();
 
-    $(window).resize(function () {
+    $(window).on('resize', debounce(function () {
         offersSlider();
 
         if( $(window).width() <= 576 ){
@@ -102,7 +106,7 @@
             $('.feedback .slick-avatars div').css({ transform: 'none' })
         }
 
-    });
+    }, 200));
 
     function checkArrowTop() {
         if( _getPageScroll() > $(window).height() ){
@@ -110,6 +114,41 @@
         }else{
             $('.arrow-top').fadeOut();
         }
+    }
+
+    function stickyHeader() {
+        if( _getPageScroll() > 1 ){
+          $('.header').addClass('is-active');
+        }else{
+          $('.header').removeClass('is-active')
+        }
+    }
+
+    function updateAnchors(){
+      // Cache selectors
+      var scrollAnchors = $(".top-navbar__menu").find(".top-navbar__li");
+      var sections = $('.container--section');
+      var headerHeight = $('.header').height();
+      var vScroll = $(window).scrollTop();
+
+      // Get id of current scroll item
+      var cur = sections.map(function(){
+       if ($(this).offset().top < vScroll + (headerHeight / 2))
+         return this;
+      });
+      // Get current element
+      cur = $(cur[cur.length-1]);
+      var id = cur && cur.length ? cur.attr('id') : "1";
+
+      // update hash
+      // setTimeout(function(){
+      //   window.location.hash = id
+      // },1000)
+
+      // Set/remove active class
+      var activeAnchor = scrollAnchors.find("[href='#"+id+"']").parent();
+      activeAnchor.addClass("active");
+      activeAnchor.siblings().removeClass("active");
     }
 
     function offersSlider() {

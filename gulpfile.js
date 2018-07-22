@@ -1,31 +1,33 @@
 'use strict';
 
 const
-    gulp = require('gulp'),
-    watch = require('gulp-watch'),
+    gulp         = require('gulp'),
+    watch        = require('gulp-watch'),
     autoprefixer = require('gulp-autoprefixer'),
-    //remember = require('gulp-remember'),
-    uglify = require('gulp-uglify'),
-    sass = require('gulp-sass'),
-    sourcemaps = require('gulp-sourcemaps'),
-    rigger = require('gulp-rigger'),
-    cssmin = require('gulp-minify-css'),
-    concat = require('gulp-concat'),
-    imagemin = require('gulp-imagemin'),
-    //svgSprite = require('gulp-svg-sprite'),
-    cheerio = require('gulp-cheerio'),
-    replace = require('gulp-replace'),
-    //pngquant = require('imagemin-pngquant'),
+    //remember   = require('gulp-remember'),
+    uglify       = require('gulp-uglify'),
+    sass         = require('gulp-sass'),
+    sourcemaps   = require('gulp-sourcemaps'),
+    rigger       = require('gulp-rigger'),
+    cssmin       = require('gulp-minify-css'),
+    concat       = require('gulp-concat'),
+    imagemin     = require('gulp-imagemin'),
+    //svgSprite  = require('gulp-svg-sprite'),
+    cheerio      = require('gulp-cheerio'),
+    replace      = require('gulp-replace'),
+    //pngquant   = require('imagemin-pngquant'),
+    server       = require('browser-sync').create(),
+    util         = require('gulp-util'),
     //browserSync = require("browser-sync"),
-    //reload = browserSync.reload,
-    //debug = require('gulp-debug'),
-    plumber = require('gulp-plumber'),
-    gulpIf = require('gulp-if'),
-    del = require('del'),
-    //iconv = require('gulp-iconv'),
-    header = require('gulp-header'),
-    //babel = require('gulp-babel')
-    surge = require('gulp-surge')
+    //reload     = browserSync.reload,
+    //debug      = require('gulp-debug'),
+    plumber      = require('gulp-plumber'),
+    gulpIf       = require('gulp-if'),
+    del          = require('del'),
+    //iconv      = require('gulp-iconv'),
+    header       = require('gulp-header'),
+    //babel      = require('gulp-babel')
+    surge        = require('gulp-surge')
 ;
 
 //const isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV == 'development';
@@ -62,6 +64,7 @@ gulp.task('js:build', function () {
             //'src/vendor/ioncalendar/js/ion.calendar.min.js',
             'src/vendor/jquery.scrollTo-min/jquery.scrollTo-min.js',
             'src/vendor/slick/slick.js',
+            'src/js/vendor/debounce.js',
             'src/js/script.js'
         ])
         .pipe(plumber())
@@ -185,6 +188,35 @@ gulp.task('deploy', function () {
     })
 });
 
+// in CL 'gulp server --tunnel siteName' to make project available over http://siteName.localtunnel.me
+
+gulp.task('server', function() {
+  server.init({
+    server: {
+      baseDir: "dist",
+      directory: false,
+      serveStaticOptions: {
+        extensions: ['html']
+      }
+    },
+    files: [
+      'dist/*.html',
+      'dist/css/*.css',
+      'dist/js/*.js',
+      'dist/img/**/*'
+    ],
+    port: util.env.port || 3000,
+    logLevel: 'info', // 'debug', 'info', 'silent', 'warn'
+    logConnections: false,
+    logFileChanges: true,
+    open: Boolean(util.env.open || true),
+    notify: false,
+    ghostMode: false,
+    online: true,
+    tunnel: util.env.tunnel || null
+  });
+});
+
 gulp.task('build', gulp.series('clean', gulp.parallel('css:build', 'js:build', 'html:build', 'img:copy', 'fonts:copy') ) );
 
 gulp.task('build:deploy', gulp.series('build', 'deploy' ) );
@@ -199,6 +231,5 @@ gulp.task('watch', function () {
     gulp.watch('src/fonts/**/*.*', gulp.parallel('fonts:copy'));
 });
 
-gulp.task('dev', gulp.series('build', 'watch'));
-
-
+gulp.task('dev', gulp.series('build', 'watch', 'server'));
+gulp.task('default', gulp.series('build', 'watch', 'server'));

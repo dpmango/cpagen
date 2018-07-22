@@ -3,4 +3,50 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700,900');
 
 /* Akrobat */
-@import url('../fonts/Akrobat/style.css');
+@font-face {
+    font-family: 'Akrobat';
+    src: url('../fonts/Akrobat/Akrobat-Black.eot');
+    src: url('../fonts/Akrobat/Akrobat-Black.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Akrobat/Akrobat-Black.woff2') format('woff2'),
+        url('../fonts/Akrobat/Akrobat-Black.woff') format('woff'),
+        url('../fonts/Akrobat/Akrobat-Black.ttf') format('truetype'),
+        url('../fonts/Akrobat/Akrobat-Black.svg#Akrobat-Black') format('svg');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Akrobat';
+    src: url('../fonts/Akrobat/Akrobat-Regular.eot');
+    src: url('../fonts/Akrobat/Akrobat-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Akrobat/Akrobat-Regular.woff2') format('woff2'),
+        url('../fonts/Akrobat/Akrobat-Regular.woff') format('woff'),
+        url('../fonts/Akrobat/Akrobat-Regular.ttf') format('truetype'),
+        url('../fonts/Akrobat/Akrobat-Regular.svg#Akrobat-Regular') format('svg');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Akrobat';
+    src: url('../fonts/Akrobat/Akrobat-Bold.eot');
+    src: url('../fonts/Akrobat/Akrobat-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Akrobat/Akrobat-Bold.woff2') format('woff2'),
+        url('../fonts/Akrobat/Akrobat-Bold.woff') format('woff'),
+        url('../fonts/Akrobat/Akrobat-Bold.ttf') format('truetype'),
+        url('../fonts/Akrobat/Akrobat-Bold.svg#Akrobat-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Akrobat';
+    src: url('../fonts/Akrobat/Akrobat-Light.eot');
+    src: url('../fonts/Akrobat/Akrobat-Light.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Akrobat/Akrobat-Light.woff2') format('woff2'),
+        url('../fonts/Akrobat/Akrobat-Light.woff') format('woff'),
+        url('../fonts/Akrobat/Akrobat-Light.ttf') format('truetype'),
+        url('../fonts/Akrobat/Akrobat-Light.svg#Akrobat-Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
